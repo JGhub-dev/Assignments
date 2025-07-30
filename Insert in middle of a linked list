@@ -1,0 +1,49 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def insertMiddle(head, x):
+   
+    if not head:
+        return Node(x)
+
+    slow = head
+    fast = head
+
+   
+    while fast.next and fast.next.next:
+        slow = slow.next
+        fast = fast.next.next
+
+    
+    new_node = Node(x)
+
+    
+    new_node.next = slow.next
+    slow.next = new_node
+
+    
+    return head
+
+
+def printList(head):
+    current = head
+    while current:
+        print(current.data, end='->' if current.next else '')
+        current = current.next
+    print()
+
+
+head = Node(10)
+head.next = Node(20)
+head.next.next = Node(40)
+head.next.next.next = Node(50)
+
+print("Original list:")
+printList(head)
+
+head = insertMiddle(head, 30)
+
+print("After insertion:")
+printList(head)
