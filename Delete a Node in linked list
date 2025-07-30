@@ -1,0 +1,43 @@
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+def deleteNode(delNode):
+    
+  
+    if delNode is None or delNode.next is None:
+        return
+
+  
+    temp = delNode.next
+    delNode.data = temp.data
+
+  
+    delNode.next = temp.next
+
+    
+    del temp
+
+def printList(head):
+    curr = head
+    while curr:
+        print(curr.data, end=" ")
+        curr = curr.next
+    print()
+
+if __name__ == "__main__":
+    
+    # Creating a linked list: 4 -> 5 -> 6 -> 7 -> 8
+    head = Node(4)
+    head.next = Node(5)
+    head.next.next = Node(6)
+    head.next.next.next = Node(7)
+    head.next.next.next.next = Node(8)
+
+    deleteNode(head)
+
+    printList(head)
