@@ -8,6 +8,7 @@ void rotateByOne(int arr[], int n) {
 int main() {
     int arr[] = {1, 2, 3, 4, 5}, n = 5;
     rotateByOne(arr, n);
-    for(int i = 0; i < n; i++) printf("%d ", arr[i]);
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
     return 0;
 }
