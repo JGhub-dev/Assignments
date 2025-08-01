@@ -5,6 +5,7 @@ int main() {
     int n = 6;
     for(int i = 0; i < n; i++) freq[arr[i]]++;
     for(int i = 0; i < 101; i++)
-        if(freq[i]) printf("%d occurs %d times\n", i, freq[i]);
+        if(freq[i]) 
+            printf("%d occurs %d times\n", i, freq[i]);
     return 0;
 }
